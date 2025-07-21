@@ -1,4 +1,4 @@
-# line-parser
+# line-chat-parser
 
 A web application for easily and quickly backing up, analyzing, and visualizing your LINE chat.
 
