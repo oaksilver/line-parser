@@ -24,6 +24,3 @@ Aplikasi web untuk backup, analisis, dan visualisasi chat LINE Anda secara mudah
 
 ## Kebutuhan
 - Browser modern (tidak perlu install apapun)
-
-## Kontak & Kontribusi
-Silakan buat issue atau pull request jika ingin berkontribusi atau melaporkan bug.
