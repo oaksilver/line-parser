@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE Chat Parser</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header" style="position: relative;">
+            <select id="languageSelect" style="position: absolute; top: 30px; right: 30px; font-size:1em; padding:5px 10px; border-radius:5px; min-width: 60px;">
+                <option value="id">ID</option>
+                <option value="en">EN</option>
+            </select>
+            <h1 style="text-align: center;">📱 LINE Chat Parser</h1>
+            <p id="welcomeText" style="text-align: center;">Backup dan analisis chat LINE Anda sebelum terlambat</p>
+        </div>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <h3 style="margin-bottom: 15px; color: #333;">Upload File Chat LINE</h3>
+                <input type="file" id="fileInput" class="file-input" accept=".txt,.csv" multiple>
+                <label id="fileLabel" for="fileInput" class="file-label">
+                    📂 Pilih File Chat
+                </label>
+                <p style="margin-top: 15px; color: #666;">
+                    Mendukung format .txt dan .csv dari ekspor chat LINE
+                </p>
+            </div>
+
+            <div class="info-text" id="infoText">
+                <strong>Cara ekspor chat dari LINE:</strong><br>
+                1. Buka chat yang ingin di-backup<br>
+                2. Tap menu (⋮) di pojok kanan atas<br>
+                3. Pilih "Pengaturan Chat" → "Ekspor Riwayat Chat"<br>
+                4. Pilih format dan periode waktu<br>
+                5. Upload file hasil ekspor di sini
+            </div>
+
+            <div class="stats" id="stats" style="display: none;">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalMessages">0</div>
+                    <div class="stat-label">Total Pesan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalParticipants">0</div>
+                    <div class="stat-label">Peserta Chat</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="dateRange">-</div>
+                    <div class="stat-label">Periode</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="mostActive">-</div>
+                    <div class="stat-label">Paling Aktif</div>
+                </div>
+            </div>
+
+            <div class="controls" id="controls" style="display: none;">
+                <button class="btn" onclick="downloadJSON()">💾 Download JSON</button>
+                <button class="btn" onclick="downloadHTML()">📄 Download HTML</button>
+                <button class="btn" onclick="showStats()">📊 Statistik Detail</button>
+                <button class="btn" onclick="searchMessages()">🔍 Cari Pesan</button>
+            </div>
+
+            <div class="chat-preview" id="chatPreview" style="display: none;">
+                <h4 style="margin-bottom: 15px; color: #333;">Preview Chat:</h4>
+                <div id="messagesContainer"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
